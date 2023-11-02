@@ -1,9 +1,8 @@
-package com.example.Repository;
+package com.example.jpademo.Repository;
 
-import com.example.model.entity.User;
+import com.example.jpademo.model.entity.User;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -13,8 +12,8 @@ import java.util.List;
  * UserRepository接口
  */
 
-@Service
+@Repository
 public interface UserRepository extends CrudRepository<User,Long> {
-
+    // 自定义操作数据库方法
     List<User> findByNameOrderByCreateTimeDesc(String name);
 }
